@@ -88,3 +88,11 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# python files
+.python-version
+__pycache__
+*.py[cd]
+
+# ide files
+.vscode/settings.json

@@ -71,7 +71,7 @@ jobs:
 
       - name: Install dependencies 👨🏻‍💻
         run: |
-          pip install poetry==${{ inputs.poetry-version }}
+          pip install poetry
           poetry install
 
       - name: Run pytest

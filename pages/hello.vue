@@ -1,7 +1,6 @@
 <template>
   <div>
-    Greeting from server:
-      {{ greet }}
+    Greeting from server: {{ greet }}
   </div>
 </template>
 <script>

@@ -2,10 +2,10 @@ import axios from 'axios'
 
 export default (ctx, inject) => {
   const api = function(url, options = {}, method = 'get', data = null) {
-    options['headers'] = Object.assign({}, options['headers'], {'Accept': 'application/json'})
+    options['headers'] = Object.assign({}, options['headers'], {Accept: 'application/json'})
 
     // XXX Only axios GET request alleviates some discomfort of using options.params instead of options.query among options.
-    if (options.hasOwnProperty('query')) {
+    if (Object.prototype.hasOwnProperty.call(options, 'query')) {
       options['params'] = {...options['query']}
       delete options['query']
     }
@@ -35,7 +35,6 @@ export default (ctx, inject) => {
    * @typedef BodyMethod
    * @type {<T=any>(url: string, body?: any, config?: Options) => Promise<Response<T>>}
    */
-
 
   /** @public @type {BodylessMethod} */
   api.get = (url, options = {}) => api(url, options, 'get')

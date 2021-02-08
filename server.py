@@ -1,5 +1,5 @@
 from typing import *
-from flask import Flask
+from flask import Flask, request, jsonify
 
 def create_app(config :Union[Mapping, None]=None, config_file='config.py') -> Flask:
     app = Flask(__name__)
@@ -11,6 +11,11 @@ def create_app(config :Union[Mapping, None]=None, config_file='config.py') -> Fl
     @app.route('/')
     def index():
         return 'It works'
+
+    @app.route('/hello')
+    def hello():
+        name = request.values.get('name', 'World')
+        return jsonify(greet=f'Hello, {name}!')
 
     return app
 

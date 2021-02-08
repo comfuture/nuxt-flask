@@ -1,3 +1,4 @@
+import os
 from typing import *
 from flask import Flask, request, jsonify
 
@@ -21,4 +22,4 @@ def create_app(config :Union[Mapping, None]=None, config_file='config.py') -> Fl
 
 if __name__ == '__main__':
     app = create_app(config_file='config.py')
-    app.run(port=4000, debug=True)
+    app.run(port=os.environ.get('SERVER_PORT', 4000))

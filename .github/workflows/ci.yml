@@ -62,17 +62,20 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
 
+      - uses: snok/install-poetry@v1.1.1
       - uses: actions/cache@v2
+        id: cached-poetry-dependencies
         with:
-          path: ~/.cache/poetry
+          path: .venv
           key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
           restore-keys: |
             ${{ runner.os }}-poetry-
 
       - name: Install dependencies 👨🏻‍💻
-        run: |
-          pip install poetry
-          poetry install
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction --no-root
 
       - name: Run pytest
-        run: pytest
+        run: |
+          source .venv/bin/activate
+          pytest

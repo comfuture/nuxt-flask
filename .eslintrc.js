@@ -9,7 +9,7 @@ module.exports = {
   },
   extends: [
     '@nuxtjs',
-    'plugin:nuxt/essential'
+    'plugin:nuxt/base'
   ],
   plugins: [
   ],
@@ -17,12 +17,12 @@ module.exports = {
   rules: {
     'space-before-function-paren': 0,
     'space-in-parens': 0,
-    'eqeqeq': 0,
     'object-property-newline': 0,
     'generator-star-spacing': 0,
-    'quotes': ['off', 'single'],
     'object-curly-spacing': 0,
+    'dot-notation': 0,
     'comma-dangle': ['error', 'never'],
+    'vue/component-definition-name-casing': 0
   },
   globals: {
     $nuxt: true

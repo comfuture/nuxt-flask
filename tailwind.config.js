@@ -1,6 +1,9 @@
 module.exports = {
   theme: {
-    sans: ['Inter','system-ui', '-apple-system', 'BlinkMacSystemFont', "Segoe UI", 'Roboto', "Helvetica Neue", 'Arial', "Noto Sans", 'sans-serif', "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"]
+    sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont',
+      'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans',
+      'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol', 'Noto Color Emoji']
   },
   variants: {},
   plugins: [
@@ -22,7 +25,7 @@ module.exports = {
       'nuxt.config.js'
     ],
     options: {
-      whitelist: ['material-icons'],
+      whitelist: ['material-icons']
     }
   }
 }

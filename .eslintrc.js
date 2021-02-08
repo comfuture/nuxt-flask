@@ -15,6 +15,8 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    'quote-props': 0,
+    'quotes': [0, 'single'],
     'space-before-function-paren': 0,
     'space-in-parens': 0,
     'object-property-newline': 0,

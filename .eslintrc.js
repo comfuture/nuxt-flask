@@ -9,10 +9,22 @@ module.exports = {
   },
   extends: [
     '@nuxtjs',
-    'plugin:nuxt/recommended'
+    'plugin:nuxt/essential'
   ],
   plugins: [
   ],
   // add your custom rules here
-  rules: {}
+  rules: {
+    'space-before-function-paren': 0,
+    'space-in-parens': 0,
+    'eqeqeq': 0,
+    'object-property-newline': 0,
+    'generator-star-spacing': 0,
+    'quotes': ['off', 'single'],
+    'object-curly-spacing': 0,
+    'comma-dangle': ['error', 'never'],
+  },
+  globals: {
+    $nuxt: true
+  }
 }

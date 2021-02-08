@@ -11,7 +11,7 @@ on:
       - master
 
 jobs:
-  ci:
+  jest:
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -44,3 +44,35 @@ jobs:
 
       - name: Run tests 🧪
         run: npm run test
+
+  pytest:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python: ['3.9']
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@master
+
+      - name: Setup python env 🏗
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python }}
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/poetry
+          key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-poetry-
+
+      - name: Install dependencies 👨🏻‍💻
+        run: |
+          pip install poetry==${{ inputs.poetry-version }}
+          poetry install
+
+      - name: Run pytest
+        run: pytest -vv

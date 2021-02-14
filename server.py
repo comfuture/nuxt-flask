@@ -2,7 +2,7 @@ import os
 from typing import *
 from flask import Flask, request, jsonify
 
-def create_app(config :Union[Mapping, None]=None, config_file='config.py') -> Flask:
+def create_app(config :Union[Mapping, None]=None, config_file :Union[str, None]=None) -> Flask:
     app = Flask(__name__)
     if config:
         app.config.update(config)

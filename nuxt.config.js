@@ -31,7 +31,7 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    ['~/modules/payload', {
+    ['~/modules/api-proxy', {
       backendPort: 4000
     }]
   ],

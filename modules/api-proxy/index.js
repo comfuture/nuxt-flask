@@ -9,8 +9,8 @@ export const meta = {
   version: '0.2.0'
 }
 
-export default function PayloadModule(moduleOptions) {
-  const options = Object.assign({}, this.options.payload, moduleOptions)
+export default function APIProxyModule(moduleOptions) {
+  const options = Object.assign({}, this.options.apiProxy, moduleOptions)
 
   const {
     proxyRule = () => false,

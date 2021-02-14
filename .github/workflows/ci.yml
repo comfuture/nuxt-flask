@@ -81,5 +81,5 @@ jobs:
 
       - name: Run pytest
         run: |
-          source .venv/bin/activate
+          source $VENV
           pytest

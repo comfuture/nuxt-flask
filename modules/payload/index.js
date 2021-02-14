@@ -1,5 +1,5 @@
 import path from 'path'
-import  { spawn } from 'child_process'
+import { spawn } from 'child_process'
 import { createProxyMiddleware } from 'http-proxy-middleware'
 import accepts from 'accepts'
 import consola from 'consola'
@@ -22,10 +22,9 @@ export default function PayloadModule(moduleOptions) {
    * defaults to all requests that accept first to json will proxied to :4000
    * @param {*} req
    */
-  const negotiate = (pathname, req)  => {
+  const negotiate = (pathname, req) => {
     /* eslint: operator-linebrak: 0 */
-    return accepts(req).type(['html', 'json']) === 'json'
-        || proxyRule(pathname, req)
+    return accepts(req).type(['html', 'json']) === 'json' || proxyRule(pathname, req)
   }
 
   // provide server middleware
@@ -46,7 +45,7 @@ export default function PayloadModule(moduleOptions) {
 
   let backend
 
-  this.nuxt.hook('listen', async (server, {host, port}) => {
+  this.nuxt.hook('listen', (server, {host, port}) => {
     backend = spawn('python', ['server.py'], {
       env: process.env,
       detached: true,
@@ -58,14 +57,7 @@ export default function PayloadModule(moduleOptions) {
     backend.stdout.on('data', buffer => consola.log(buffer.toString('utf8')))
   })
 
-  this.nuxt.hook('close', async nuxt => {
-    if (backend !== null) {
-      consola.info('Backend process closed')
-      backend.kill('SIGTERM')
-    }
-  })
-
-  this.nuxt.hook('error', async error => {
+  this.nuxt.hook('close', (nuxt) => {
     if (backend !== null) {
       consola.info('Backend process closed')
       backend.kill('SIGTERM')
@@ -75,7 +67,7 @@ export default function PayloadModule(moduleOptions) {
   process.on('SIGINT', () => {
     if (backend !== null) {
       consola.info('Backend process closed')
-      backend.kill('SIGTERM')  
+      backend.kill('SIGTERM')
     }
     process.exit()
   })

@@ -16,6 +16,7 @@ export default (ctx, inject) => {
       const headers = {...ctx.req.headers}
       delete headers['accept']
       headers['Accept'] = 'application/json'
+      // eslint-disable-next-line
       const port = <%= options.backendPort %>
       const http = axios.create({
         baseURL: `http://localhost:${port}`,

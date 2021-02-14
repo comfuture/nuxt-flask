@@ -14,6 +14,7 @@ export default function PayloadModule(moduleOptions) {
 
   const {
     proxyRule = () => false,
+    backendHost = '127.0.0.1',
     backendPort = 4000
   } = options
 
@@ -31,7 +32,7 @@ export default function PayloadModule(moduleOptions) {
   this.addServerMiddleware({
     path: '/',
     handler: createProxyMiddleware(negotiate, {
-      target: `http://127.0.0.1:${backendPort}`
+      target: `http://${backendHost}:${backendPort}`
     })
   })
 

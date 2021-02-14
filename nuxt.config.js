@@ -20,12 +20,6 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/api'
-  ],
-
-  serverMiddleware: [
-    // proxy api endpoints to flask
-    { path: '/', handler: '~/server-middleware/conditional-proxy' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -36,7 +30,10 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    ['~/modules/payload', {
+      backendPort: 4000
+    }]
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

@@ -9,7 +9,8 @@
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" .",
     "lint": "npm run lint:js",
-    "test": "jest && pytest -v"
+    "test": "jest",
+    "test:pytest": "pytest -v"
   },
   "dependencies": {
     "accepts": "^1.3.7",

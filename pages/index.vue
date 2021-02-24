@@ -2,7 +2,8 @@
   <div class="app">
     <header>
       <div class="container">
-        <h1>Nuxt Flask
+        <h1>
+          Nuxt Flask
           <sup><span class="text-yellow-500">Python</span> <span class="text-blue-700">powered</span></sup>
         </h1>
         <p class="description">

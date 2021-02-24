@@ -1,5 +1,7 @@
 # nuxt-flask
 
+Webapp template that made with [Nuxt](https://nuxtjs.org/) and [Flask](https://flask.palletsprojects.com/) backend. Out of box, battery included.
+
 ```python
 @app.route('/hello')
 def hello():

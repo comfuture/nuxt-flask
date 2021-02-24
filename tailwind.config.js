@@ -8,8 +8,7 @@ module.exports = {
   darkMode: 'media',
   variants: {},
   plugins: [
-    require('@tailwindcss/custom-forms'),
-    require('@tailwindcss/typography')
+    require('@tailwindcss/custom-forms')
   ],
   purge: {
     // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css

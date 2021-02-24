@@ -9,10 +9,6 @@ def create_app(config :Union[Mapping, None]=None, config_file :Union[str, None]=
     elif config_file:
         app.config.from_pyfile(config_file)
 
-    @app.route('/')
-    def index():
-        return 'It works'
-
     @app.route('/hello')
     def hello():
         name = request.values.get('name', 'World')

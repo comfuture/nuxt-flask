@@ -5,7 +5,7 @@ import accepts from 'accepts'
 import consola from 'consola'
 
 export const meta = {
-  name: 'nuxt-payload',
+  name: 'api-proxy',
   version: '0.2.0'
 }
 

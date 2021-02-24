@@ -52,14 +52,20 @@ export default {
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
+  content: {
+    markdown: {
+      prism: {
+        theme: '~/assets/prism-theme-vscode-dark.css'
+      }
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     postcss: {
       plugins: {
-        tailwindcss: path.resolve(__dirname, './tailwind.config.js')
-        // 'postcss-nested': {}
+        tailwindcss: path.resolve(__dirname, './tailwind.config.js'),
+        'postcss-nested': {}
       }
     }
   }

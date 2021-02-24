@@ -5,6 +5,7 @@ module.exports = {
       'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji',
       'Segoe UI Symbol', 'Noto Color Emoji']
   },
+  darkMode: 'media',
   variants: {},
   plugins: [
     require('@tailwindcss/custom-forms'),

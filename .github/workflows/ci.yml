@@ -62,7 +62,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
 
-      - uses: snok/install-poetry@v1.1.1
+      - uses: snok/install-poetry@v1.1.2
         with:
           virtualenvs-create: true
           virtualenvs-in-project: true
@@ -72,8 +72,6 @@ jobs:
         with:
           path: .venv
           key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-poetry-
 
       - name: Install dependencies 👨🏻‍💻
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'

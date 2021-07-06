@@ -63,9 +63,18 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     postcss: {
-      plugins: {
+    plugins: {
         tailwindcss: path.resolve(__dirname, './tailwind.config.js'),
         'postcss-nested': {}
+      }
+    },
+    babel: {
+      compact: true,
+      presets(env, [preset, options]) {
+        options.corejs = { version: 3 }
+        return [
+          ['@nuxt/babel-preset-app', options]
+        ]
       }
     }
   }

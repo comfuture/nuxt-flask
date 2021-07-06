@@ -2,7 +2,8 @@ import os
 from typing import *
 from flask import Flask, request, jsonify
 
-def create_app(config :Union[Mapping, None]=None, config_file :Union[str, None]=None) -> Flask:
+
+def create_app(*, config: Optional[Mapping] = None, config_file: Optional[str] = None) -> Flask:
     app = Flask(__name__)
     if config:
         app.config.update(config)
@@ -15,6 +16,7 @@ def create_app(config :Union[Mapping, None]=None, config_file :Union[str, None]=
         return jsonify(greet=f'Hello, {name}!')
 
     return app
+
 
 if __name__ == '__main__':
     app = create_app(config_file='config.py')

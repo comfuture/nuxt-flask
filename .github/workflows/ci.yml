@@ -29,7 +29,7 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Cache node_modules 📦
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -67,7 +67,7 @@ jobs:
           virtualenvs-create: true
           virtualenvs-in-project: true
 
-      - uses: actions/cache@v2.1.5
+      - uses: actions/cache@v3
         id: cached-poetry-dependencies
         with:
           path: .venv

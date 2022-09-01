@@ -30,7 +30,7 @@
     "babel-jest": "^27.5.0",
     "core-js": "^3.22.1",
     "eslint": "^7.30.0",
-    "eslint-plugin-nuxt": "^3.0.0",
+    "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-vue": "^7.18.0",
     "http-proxy-middleware": "^2.0.5",
     "jest": "^27.5.0",

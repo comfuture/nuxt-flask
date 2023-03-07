@@ -33,7 +33,7 @@
     "eslint-plugin-nuxt": "^3.0.0",
     "eslint-plugin-vue": "^7.18.0",
     "http-proxy-middleware": "^2.0.5",
-    "jest": "^27.5.0",
+    "jest": "^29.5.0",
     "postcss": "^8.3.5",
     "vue-jest": "^3.0.4"
   }
